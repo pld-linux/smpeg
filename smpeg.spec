@@ -58,7 +58,7 @@ Biblioteki statyczne smpeg.
 %setup -q
 
 %build
-CXXFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS} -fno-rtti -fno-exceptions"
+CXXFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS} -fno-rtti -fno-exceptions"
 %configure \
 	--disable-opengl-player
 %{__make}
