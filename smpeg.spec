@@ -6,6 +6,8 @@ License:	LGPL
 Group:		Libraries
 Group(fr):	Development/Librairies
 Source0:	http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
+Source1:	gtv.desktop
+Source2:	gtv.png
 BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	gtk+-devel >= 1.2.1
 URL:		http://www.lokigames.com/development/smpeg.php3
@@ -50,7 +52,9 @@ Biblioteki statyczne smpeg.
 %setup -q
 
 %build
-LDFLAGS="-s"; export LDLAGS
+CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions"
+LDFLAGS="-s"
+export CXXFLAGS LDLAGS
 %configure \
 	--disable-opengl-player
 make
@@ -58,7 +62,12 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
+
 make install DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
@@ -75,6 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc {CHANGES,README}.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_applnkdir}/Multimedia/*
+%{_datadir}/pixmaps/*
 %{_mandir}/man1/*
 
 %files devel
