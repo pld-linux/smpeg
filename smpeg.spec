@@ -8,7 +8,7 @@ Group(fr):	Development/Librairies
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
-BuildRequires:	SDL-devel >= 1.1.1
+BuildRequires:	SDL-devel >= 1.1.3
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	esound-devel
