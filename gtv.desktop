@@ -9,4 +9,5 @@ Exec=gtv
 Terminal=0
 Type=Application
 Icon=gtv.png
+Encoding=UTF-8
 # vi: encoding=utf-8
