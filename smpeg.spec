@@ -1,7 +1,7 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -60,6 +60,7 @@ Biblioteki statyczne smpeg.
 %build
 CXXFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS} -fno-rtti -fno-exceptions"
 %configure \
+	--disable-debug \
 	--disable-opengl-player
 %{__make}
 
