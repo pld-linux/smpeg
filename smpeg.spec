@@ -51,8 +51,8 @@ Biblioteki statyczne smpeg.
 
 %build
 LDFLAGS="-s"; export LDLAGS
-%configure
-
+%configure \
+	--disable-opengl-player
 make
 
 %install
