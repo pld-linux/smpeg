@@ -1,0 +1,11 @@
+--- smpeg-0.4.4/smpeg.m4.orig	Mon Dec 22 14:03:10 2003
++++ smpeg-0.4.4/smpeg.m4	Mon Dec 22 14:03:34 2003
+@@ -10,7 +10,7 @@
+ ACTION-IF-NOT-FOUND]]])
+ dnl Test for SMPEG, and define SMPEG_CFLAGS and SMPEG_LIBS
+ dnl
+-AC_DEFUN(AM_PATH_SMPEG,
++AC_DEFUN([AM_PATH_SMPEG],
+ [dnl
+ dnl Get the cflags and libraries from the smpeg-config script
+ dnl
