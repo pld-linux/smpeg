@@ -5,7 +5,7 @@ Summary(ru):	SDL MPEG библиотека и проигрыватель
 Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	11
+Release:	12
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ Source1:	gtv.desktop
 Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
 Patch1:		%{name}-gcc.patch
+Patch2:		%{name}-optimize.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -127,6 +128,7 @@ Odtwarzacz MPEG gtv.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
