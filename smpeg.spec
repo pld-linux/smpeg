@@ -21,8 +21,6 @@ BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
 
-%define		_prefix	/usr/X11R6
-%define		_mandir	%{_prefix}/man
 
 %description
 SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and
