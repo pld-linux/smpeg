@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka SDL MPEG
 Summary(pt_BR):	Biblioteca MPEG SDL
 Name:		smpeg
 Version:	0.4.4
-Release:	7
+Release:	8
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
@@ -16,7 +16,6 @@ BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
-BuildRequires:	esound-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
 
@@ -88,9 +87,13 @@ autoconf
 automake -a -c
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
+%ifarch i686 athlon
+	--enable-mmx \
+%endif
 	--disable-debug \
 	--disable-opengl-player
-%{__make}
+
+%{__make} CC=%{__cxx}
 
 %install
 rm -rf $RPM_BUILD_ROOT
