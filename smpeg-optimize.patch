@@ -1,0 +1,21 @@
+--- smpeg-0.4.4/configure.in.orig	Sun Sep 21 13:20:25 2003
++++ smpeg-0.4.4/configure.in	Sun Sep 21 13:20:57 2003
+@@ -105,18 +105,6 @@
+     if test x$ac_cv_prog_gcc = xyes; then
+         CFLAGS="$CFLAGS -fexpensive-optimizations -fomit-frame-pointer"
+     fi
+-    case "$target" in
+-        i486-*-*)  # Yeah right. :)
+-            if test x$ac_cv_prog_gcc = xyes; then
+-                CFLAGS="$CFLAGS -march=486"
+-            fi
+-            ;;
+-        i?86-*-*)
+-            if test x$ac_cv_prog_gcc = xyes; then
+-                CFLAGS="$CFLAGS -march=pentium -mcpu=pentiumpro"
+-            fi
+-            ;;
+-    esac
+ fi
+ 
+ dnl Check for SDL
