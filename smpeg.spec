@@ -1,15 +1,13 @@
-# $Revision: 1.2 $
 Summary:	SDL MPEG Library
 Name:		smpeg
 Version:	0.3.1
 Release:	1
 Copyright:	LGPL
 Group:		Libraries
-Source0:	smpeg-%{version}.tar.gz
+Source:		http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
+BuildRequires:	SDL-devel >= 0.11.2
 URL:		http://www.lokigames.com/development/smpeg.php3
-Requires:	SDL
-BuildRoot:	/tmp/%{name}-root
-BuildRequires:	SDL-devel
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix	/usr/X11R6
 %define		_mandir	%{_prefix}/man
@@ -24,7 +22,7 @@ create a general purpose MPEG video/audio player for the Linux OS.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS"
+LDFLAGS="-s"; export LDLAGS
 %configure
 
 make
@@ -32,23 +30,20 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install prefix=$RPM_BUILD_ROOT%{_prefix}
+make install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/*/* CHANGES README COPYING
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/*/* CHANGES README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
-
-%postun
-/sbin/ldconfig
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc {CHANGES,COPYING,README}.gz
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root)%{_includedir}/*
-%attr(755,root,root)%{_libdir}/*
-%attr(644,root,root)%{_mandir}/*
+%attr(755,root,root) %{_libdir}/*
+%{_includedir}/*
+%{_mandir}/*
