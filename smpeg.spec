@@ -2,7 +2,7 @@ Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
 Version:	0.4.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
