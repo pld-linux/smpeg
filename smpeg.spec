@@ -59,7 +59,7 @@ LDFLAGS="-s"
 export CXXFLAGS LDLAGS
 %configure \
 	--disable-opengl-player
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
