@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/plaympeg
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_applnkdir}/Multimedia/*
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_mandir}/man1/*
 
 %files devel
