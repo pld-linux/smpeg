@@ -2,23 +2,27 @@ Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
 Version:	0.4.4
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
+Patch0:		%{name}-acfix.patch
+URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	esound-devel
-URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix	/usr/X11R6
@@ -41,7 +45,12 @@ Summary:	Smpeg header files and development documentation
 Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja do smpeg
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 
@@ -56,19 +65,26 @@ Summary:	Smpeg static libraries
 Summary(pl):	Biblioteki statyczne smpeg
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
 Smpeg static libraries.
 
-%description devel -l pl
+%description static -l pl
 Biblioteki statyczne smpeg.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
+rm -f missing
 aclocal
 autoconf
 automake -a -c

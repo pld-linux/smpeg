@@ -1,0 +1,10 @@
+--- smpeg-0.4.4/configure.in.orig	Tue Apr 24 21:25:39 2001
++++ smpeg-0.4.4/configure.in	Wed Oct 17 23:26:25 2001
+@@ -52,6 +52,7 @@
+ AC_LIBTOOL_WIN32_DLL
+ AM_PROG_LIBTOOL
+ AC_PROG_INSTALL
++AM_PROG_AS
+ 
+ dnl Work around the lack of certain typedefs.
+ AC_TYPE_SOCKLEN_T
