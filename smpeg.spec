@@ -23,7 +23,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
-Requires:       %{name}-libs = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
 
@@ -62,6 +62,7 @@ MPEG-ауд╕о/в╕део програвача для Linux.
 Summary:	Shared smpeg libraries
 Summary(pl):	WspСЁdzielone biblioteki smpeg
 Group:		Libraries
+Conflicts:	smpeg < 0.4.4-14
 
 %description libs
 Shared smpeg libraries.
@@ -179,8 +180,8 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   libs -p /sbin/ldconfig
-%postun libs -p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
