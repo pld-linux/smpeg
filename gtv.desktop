@@ -10,5 +10,5 @@ Terminal=false
 Type=Application
 Icon=gtv.png
 Encoding=UTF-8
-Categories=AudioVideo;Player;
+Categories=GTK;Video;Player;
 # vi: encoding=utf-8
