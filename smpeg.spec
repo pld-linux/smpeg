@@ -10,6 +10,8 @@ Source1:	gtv.desktop
 Source2:	gtv.png
 BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	gtk+-devel >= 1.2.1
+BuildRequires:	libstdc++-devel
+BuildRequires:	esound-devel
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
