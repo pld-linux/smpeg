@@ -5,7 +5,7 @@ Summary(ru):	SDL MPEG библиотека и проигрыватель
 Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	12
+Release:	13
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
@@ -15,6 +15,7 @@ Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
 Patch1:		%{name}-gcc.patch
 Patch2:		%{name}-optimize.patch
+Patch3:		%{name}-am18.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -129,13 +130,13 @@ Odtwarzacz MPEG gtv.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
+
+# get only AC_TYPE_SOCKLEN_T, kill the rest (libtool.m4 in particular)
+tail -n 23 acinclude.m4 > acinc.tmp
+mv -f acinc.tmp acinclude.m4
 
 %build
-rm -f missing
-# remove libtool.m4 from acinclude.m4
-head -168 acinclude.m4 > acinc.tmp
-tail -23 acinclude.m4 >> acinc.tmp
-mv -f acinc.tmp acinclude.m4
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -148,7 +149,9 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 	--disable-debug \
 	--disable-opengl-player
 
-%{__make} CC=%{__cxx}
+%{__make} \
+	CC="%{__cxx}" \
+	CCASFLAGS="\$(CFLAGS)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
