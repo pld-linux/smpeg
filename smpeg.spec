@@ -5,7 +5,7 @@ Summary(ru):	SDL MPEG библиотека и проигрыватель
 Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	8
+Release:	10
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
