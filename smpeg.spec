@@ -1,6 +1,8 @@
 Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Summary(pt_BR):	Biblioteca MPEG SDL
+Summary(ru):	SDL MPEG библиотека и проигрыватель
+Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
 Release:	8
@@ -41,10 +43,24 @@ criado por Woo-jae Jung. Completamos o trabalho inicial de casar estes
 dois projetos para criar um reprodutor MPEG de vМdeo e Аudio de
 propСsito geral para o sistema operacional Linux.
 
+%description -l ru
+SMPEG основывается на программном MPEG декодере mpeg_play,
+разработанном в UCB (Университете Беркли) и SPLAY, аудио-декодере,
+созданном Woo-jae Jung. Эти два проекта были объединены для создания
+MPEG-аудио/видео проигрывателя для Linux.
+
+%description -l uk
+SMPEG базу╓ться на програмному MPEG декодер╕ mpeg_play, розробленому в
+UCB (Ун╕верситет╕ Беркл╕) та SPLAY, ауд╕о-декодер╕, який створив
+Woo-jae Jung. Ц╕ два проекти були об'╓днан╕ для створення
+MPEG-ауд╕о/в╕део програвача для Linux.
+
 %package devel
 Summary:	Smpeg header files and development documentation
 Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja do smpeg
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes SMPEG
+Summary(ru):	Файлы, необходимые для разработки программ, использующих SMPEG
+Summary(uk):	Файли, необх╕дн╕ для розробки програм, що використовують SMPEG
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
@@ -60,10 +76,20 @@ Pliki nagЁСwkowe oraz dokumentacja do biblioteki smpeg.
 Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes
 SMPEG.
 
+%description devel -l uk
+Цей пакет м╕стить файли, необх╕дн╕ для розробки програм, що
+використовують SMPEG.
+
+%description devel -l ru
+Этот пакет содержит файлы, необходимые для разработки программ,
+использующих SMPEG.
+
 %package static
 Summary:	Smpeg static libraries
 Summary(pl):	Biblioteki statyczne smpeg
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG
+Summary(ru):	Статические библиотеки для разработки с использованием SMPEG
+Summary(uk):	Статичн╕ б╕бл╕отеки для розробки з використанням SMPEG
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -76,6 +102,14 @@ Biblioteki statyczne smpeg.
 %description static -l pt_BR
 Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG.
 
+
+%description static -l ru
+Этот пакет содержит статические библиотеки для разработки программ,
+использующих SMPEG.
+
+%description static -l uk
+Цей пакет м╕стить статичн╕ б╕бл╕отеки для розробки програм, що
+використовують SMPEG.
 %prep
 %setup -q
 %patch -p1
