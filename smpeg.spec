@@ -32,7 +32,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded %{_libdir}/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/*/* CHANGES README
 
