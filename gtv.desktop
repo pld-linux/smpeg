@@ -2,6 +2,7 @@
 Name=gtv MPEG player
 Name[sv]=GTV MPEG-spelare
 Comment=gtv MPEG player
+Comment[pl]=GTV - odtwarzacz MPEG 
 Comment[sv]=Enkel spelare för MPEG-filmer
 Exec=gtv
 Terminal=0
