@@ -1,11 +1,12 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
-Version:	0.3.1
+Version:	0.3.2
 Release:	1
 Copyright:	LGPL
 Group:		Libraries
 Source:		http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
-BuildRequires:	SDL-devel >= 0.11.2
+BuildRequires:	SDL-devel >= 1.0.1
+BuildRequires:	gtk+-devel >= 1.2.1
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRoot:	/tmp/%{name}-%{version}-root
 
