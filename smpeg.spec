@@ -84,7 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {CHANGES,README}.gz
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/gtv
+%attr(755,root,root) %{_bindir}/plaympeg
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_applnkdir}/Multimedia/*
 %{_datadir}/pixmaps/*
@@ -92,6 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/smpeg-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
