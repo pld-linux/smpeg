@@ -9,6 +9,7 @@ Release:	11
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
+# Source0-md5: 59c76ac704088ef5539210190c4e1fe3
 Source1:	gtv.desktop
 Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
