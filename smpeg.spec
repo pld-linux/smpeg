@@ -87,7 +87,7 @@ autoconf
 automake -a -c
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
-%ifarch i686 athlon
+%ifarch %{ix86}
 	--enable-mmx \
 %endif
 	--disable-debug \
