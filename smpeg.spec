@@ -1,11 +1,12 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
-Version:	0.3.3
+Version:	0.3.4
 Release:	1
-Copyright:	LGPL
+License:	LGPL
 Group:		Libraries
-Source:		http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
-BuildRequires:	SDL-devel >= 1.0.1
+Group(fr):	Development/Librairies
+Source0:	http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
+BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	gtk+-devel >= 1.2.1
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -14,10 +15,10 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %define		_mandir	%{_prefix}/man
 
 %description
-SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder
-and SPLAY, an mpeg audio decoder created by Woo-jae Jung. We have
-completed the initial work to wed these two projects in order to 
-create a general purpose MPEG video/audio player for the Linux OS. 
+SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and SPLAY,
+an mpeg audio decoder created by Woo-jae Jung. We have completed the
+initial work to wed these two projects in order to  create a general
+purpose MPEG video/audio player for the Linux OS.
 
 %package devel
 Summary:	Smpeg header files and development documentation
