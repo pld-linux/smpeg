@@ -2,7 +2,7 @@ Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
 Version:	0.4.2
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -12,7 +12,7 @@ Group(pl):	Biblioteki
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
-BuildRequires:	SDL-devel >= 1.1.5
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	esound-devel
