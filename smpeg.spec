@@ -57,7 +57,7 @@ Header files and development documentation for smpeg.
 %description devel -l pl
 Pliki nag³ówkowe oraz dokumentacja do biblioteki smpeg.
 
-%description -l pt_BR devel
+%description devel -l pt_BR
 Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
 SMPEG.
 
@@ -74,7 +74,7 @@ Smpeg static libraries.
 %description static -l pl
 Biblioteki statyczne smpeg.
 
-%description -l pt_BR static                              
+%description static -l pt_BR
 Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 
 %prep
