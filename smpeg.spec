@@ -9,7 +9,7 @@ Source0:	http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.
 BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	gtk+-devel >= 1.2.1
 URL:		http://www.lokigames.com/development/smpeg.php3
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix	/usr/X11R6
 %define		_mandir	%{_prefix}/man
