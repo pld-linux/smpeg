@@ -5,7 +5,7 @@ Summary(ru):	SDL MPEG библиотека и проигрыватель
 Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	13
+Release:	14
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
@@ -23,6 +23,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
+Requires:       %{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
 
@@ -57,6 +58,17 @@ UCB (Ун╕верситет╕ Беркл╕) та SPLAY, ауд╕о-декодер╕, який створив
 Woo-jae Jung. Ц╕ два проекти були об'╓днан╕ для створення
 MPEG-ауд╕о/в╕део програвача для Linux.
 
+%package libs
+Summary:	Shared smpeg libraries
+Summary(pl):	WspСЁdzielone biblioteki smpeg
+Group:		Libraries
+
+%description libs
+Shared smpeg libraries.
+
+%description libs -l pl
+WspСЁdzielone biblioteki smpeg.
+
 %package devel
 Summary:	Smpeg header files and development documentation
 Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja do smpeg
@@ -64,7 +76,7 @@ Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplic
 Summary(ru):	Файлы, необходимые для разработки программ, использующих SMPEG
 Summary(uk):	Файли, необх╕дн╕ для розробки програм, що використовують SMPEG
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	SDL-devel
 Obsoletes:	libsmpeg0.4-devel
 
@@ -93,7 +105,7 @@ Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG
 Summary(ru):	Статические библиотеки для разработки с использованием SMPEG
 Summary(uk):	Статичн╕ б╕бл╕отеки для розробки з використанням SMPEG
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Smpeg static libraries.
@@ -117,7 +129,7 @@ Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG.
 Summary:	gtv MPEG player
 Summary(pl):	Odtwarzacz MPEG gtv
 Group:		X11/Applications/Multimedia
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description gtv
 gtv MPEG player.
@@ -155,27 +167,30 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post   libs -p /sbin/ldconfig
+%postun libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
 %attr(755,root,root) %{_bindir}/plaympeg
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_mandir}/man1/plaympeg.1*
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -192,6 +207,6 @@ rm -rf $RPM_BUILD_ROOT
 %files gtv
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gtv
-%{_applnkdir}/Multimedia/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_mandir}/man1/gtv.1*
