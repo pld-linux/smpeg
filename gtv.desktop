@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=gtv
+Comment=gtv MPEG player
+Exec=gtv
+Terminal=0
+Type=Application
+Icon=gtv.png
