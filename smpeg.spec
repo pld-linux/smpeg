@@ -1,4 +1,4 @@
-# $Revison:$
+# $Revision: 1.2 $
 Summary:	SDL MPEG Library
 Name:		smpeg
 Version:	0.3.1
