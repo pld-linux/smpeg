@@ -140,8 +140,6 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
-gzip -9nf CHANGES README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -150,7 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {CHANGES,README}.gz
+%doc CHANGES README
 %attr(755,root,root) %{_bindir}/gtv
 %attr(755,root,root) %{_bindir}/plaympeg
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
