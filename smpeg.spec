@@ -1,7 +1,7 @@
 Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
-Version:	0.4.3
+Version:	0.4.4
 Release:	1
 License:	LGPL
 Group:		Libraries
@@ -76,13 +76,12 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
+%{__install} -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
+%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+%{__install} %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
 gzip -9nf CHANGES README
 
