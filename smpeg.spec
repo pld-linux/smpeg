@@ -1,11 +1,11 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
-Version:	0.3.5
+Version:	0.4.0
 Release:	1
 License:	LGPL
 Group:		Libraries
 Group(fr):	Development/Librairies
-Source0:	http://www.lokigames.com/development/download/smpeg/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
 BuildRequires:	SDL-devel >= 1.1.1
