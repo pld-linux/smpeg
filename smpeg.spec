@@ -116,7 +116,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
