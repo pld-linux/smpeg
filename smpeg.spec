@@ -1,10 +1,12 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
-Version:	0.4.0
+Version:	0.4.1
 Release:	1
 License:	LGPL
 Group:		Libraries
-Group(fr):	Development/Librairies
+Group(de):	Libraries
+Group(fr):	Librairies
+Group(pl):	Biblioteki
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
@@ -19,15 +21,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir	%{_prefix}/man
 
 %description
-SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and SPLAY,
-an mpeg audio decoder created by Woo-jae Jung. We have completed the
-initial work to wed these two projects in order to  create a general
-purpose MPEG video/audio player for the Linux OS.
+SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and
+SPLAY, an mpeg audio decoder created by Woo-jae Jung. We have
+completed the initial work to wed these two projects in order to
+create a general purpose MPEG video/audio player for the Linux OS.
 
 %package devel
 Summary:	Smpeg header files and development documentation
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja do smpeg
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
@@ -41,6 +44,7 @@ Pliki nag³ówkowe oraz dokumentacja do biblioteki smpeg.
 Summary:	Smpeg static libraries
 Summary(pl):	Biblioteki statyczne smpeg
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
@@ -54,9 +58,7 @@ Biblioteki statyczne smpeg.
 %setup -q
 
 %build
-CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions"
-LDFLAGS="-s"
-export CXXFLAGS LDLAGS
+CXXFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} -fno-rtti -fno-exceptions"
 %configure \
 	--disable-opengl-player
 %{__make}
@@ -71,9 +73,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/*/* CHANGES README
+gzip -9nf CHANGES README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
