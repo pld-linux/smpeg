@@ -1,4 +1,5 @@
 Summary:	SDL MPEG Library
+Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
 Version:	0.4.2
 Release:	3
@@ -26,6 +27,13 @@ SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and
 SPLAY, an mpeg audio decoder created by Woo-jae Jung. We have
 completed the initial work to wed these two projects in order to
 create a general purpose MPEG video/audio player for the Linux OS.
+
+%description -l pl
+SMPEG jest bazowanym na mpeg_play z UC Berkeley programowym
+dekoderem MPEG. SMPLAY jest dekoderem audio stworzonym przez
+Woo-jae Jung. Skompletowali¶my prace tych dwóch projektów, aby
+stworzyæ MPEG video/audio player ogólnego przeznaczenia dla
+systemu Linux.
 
 %package devel
 Summary:	Smpeg header files and development documentation
