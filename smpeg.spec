@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka SDL MPEG
 Summary(pt_BR):	Biblioteca MPEG SDL
 Name:		smpeg
 Version:	0.4.4
-Release:	5
+Release:	6
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -25,6 +25,7 @@ BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	esound-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libsmpeg0.4
 
 %define		_prefix	/usr/X11R6
 %define		_mandir	%{_prefix}/man
@@ -62,6 +63,7 @@ Group(ru):	X11/Разработка/Библиотеки
 Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
+Obsoletes:	libsmpeg0.4-devel
 
 %description devel
 Header files and development documentation for smpeg.
