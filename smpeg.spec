@@ -1,6 +1,6 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
-Version:	0.3.4
+Version:	0.3.5
 Release:	1
 License:	LGPL
 Group:		Libraries
