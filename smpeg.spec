@@ -1,5 +1,6 @@
 Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
+Summary(pt_BR):	Biblioteca MPEG SDL
 Name:		smpeg
 Version:	0.4.4
 Release:	5
@@ -40,9 +41,17 @@ MPEG. SMPLAY jest dekoderem audio stworzonym przez Woo-jae Jung.
 Skompletowali¶my prace tych dwóch projektów, aby stworzyæ MPEG
 video/audio player ogólnego przeznaczenia dla systemu Linux.
 
+%description -l pt_BR
+A SMPEG é baseada no software de decodificação MPEG mpeg_play da
+Universidade de Berkeley e no SPLAY, um decodificador de áudio mpeg
+criado por Woo-jae Jung. Completamos o trabalho inicial de casar estes
+dois projetos para criar um reprodutor MPEG de vídeo e áudio de
+propósito geral para o sistema operacional Linux.
+
 %package devel
 Summary:	Smpeg header files and development documentation
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja do smpeg
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SMPEG
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(es):	X11/Desarrollo/Bibliotecas
@@ -60,9 +69,14 @@ Header files and development documentation for smpeg.
 %description devel -l pl
 Pliki nag³ówkowe oraz dokumentacja do biblioteki smpeg.
 
+%description -l pt_BR devel
+Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
+SMPEG.
+
 %package static
 Summary:	Smpeg static libraries
 Summary(pl):	Biblioteki statyczne smpeg
+Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações SMPEG
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(es):	X11/Desarrollo/Bibliotecas
@@ -78,6 +92,9 @@ Smpeg static libraries.
 
 %description static -l pl
 Biblioteki statyczne smpeg.
+
+%description -l pt_BR static                              
+Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 
 %prep
 %setup -q
