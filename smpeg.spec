@@ -2,7 +2,7 @@ Summary:	SDL MPEG Library
 Summary(pl):	Biblioteka SDL MPEG
 Name:		smpeg
 Version:	0.4.4
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -12,6 +12,8 @@ Group(pl):	Biblioteki
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
@@ -29,11 +31,10 @@ completed the initial work to wed these two projects in order to
 create a general purpose MPEG video/audio player for the Linux OS.
 
 %description -l pl
-SMPEG jest bazowanym na mpeg_play z UC Berkeley programowym
-dekoderem MPEG. SMPLAY jest dekoderem audio stworzonym przez
-Woo-jae Jung. Skompletowali¶my prace tych dwóch projektów, aby
-stworzyæ MPEG video/audio player ogólnego przeznaczenia dla
-systemu Linux.
+SMPEG jest bazowanym na mpeg_play z UC Berkeley programowym dekoderem
+MPEG. SMPLAY jest dekoderem audio stworzonym przez Woo-jae Jung.
+Skompletowali¶my prace tych dwóch projektów, aby stworzyæ MPEG
+video/audio player ogólnego przeznaczenia dla systemu Linux.
 
 %package devel
 Summary:	Smpeg header files and development documentation
@@ -68,6 +69,9 @@ Biblioteki statyczne smpeg.
 %setup -q
 
 %build
+aclocal
+autoconf
+automake -a -c
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure \
 	--disable-debug \
