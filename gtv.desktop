@@ -2,8 +2,9 @@
 Name=gtv MPEG player
 Name[sv]=GTV MPEG-spelare
 Comment=gtv MPEG player
-Comment[sv]=Enkel spelare för MPEG-filmer
+Comment[sv]=Enkel spelare fÃ¶r MPEG-filmer
 Exec=gtv
 Terminal=0
 Type=Application
 Icon=gtv.png
+# vi: encoding=utf-8
