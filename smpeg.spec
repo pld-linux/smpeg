@@ -18,6 +18,32 @@ and SPLAY, an mpeg audio decoder created by Woo-jae Jung. We have
 completed the initial work to wed these two projects in order to 
 create a general purpose MPEG video/audio player for the Linux OS. 
 
+%package devel
+Summary:	Smpeg header files and development documentation
+Summary(pl):	Pliki nag³ówkowe oraz dokumentacja do smpeg
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+
+%description devel
+Header files and development documentation for smpeg.
+
+%description devel -l pl
+Pliki nag³ówkowe oraz dokumentacja do biblioteki smpeg.
+
+%package static
+Summary:	Smpeg static libraries
+Summary(pl):	Biblioteki statyczne smpeg
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
+
+%description static
+Smpeg static libraries.
+
+%description devel -l pl
+Biblioteki statyczne smpeg.
+
 %prep
 %setup -q
 
@@ -46,6 +72,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {CHANGES,COPYING,README}.gz
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_mandir}/man1/*
+
+%files devel
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
-%{_mandir}/*
+
+%files static
+%attr(644,root,root) %{_libdir}/lib*.a
