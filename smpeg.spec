@@ -13,6 +13,7 @@ Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
 Source1:	gtv.desktop
 Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
+Patch1:		%{name}-gcc.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -124,7 +125,8 @@ Odtwarzacz MPEG gtv.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
