@@ -5,7 +5,7 @@ Summary(ru):	SDL MPEG библиотека и проигрыватель
 Summary(uk):	SDL MPEG б╕бл╕отека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	10
+Release:	11
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
@@ -13,14 +13,14 @@ Source1:	gtv.desktop
 Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:1.4d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
-
 
 %description
 SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and
@@ -59,7 +59,7 @@ Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja do smpeg
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes SMPEG
 Summary(ru):	Файлы, необходимые для разработки программ, использующих SMPEG
 Summary(uk):	Файли, необх╕дн╕ для розробки програм, що використовують SMPEG
-Group:		X11/Development/Libraries
+Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 Obsoletes:	libsmpeg0.4-devel
@@ -88,7 +88,7 @@ Summary(pl):	Biblioteki statyczne smpeg
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG
 Summary(ru):	Статические библиотеки для разработки с использованием SMPEG
 Summary(uk):	Статичн╕ б╕бл╕отеки для розробки з використанням SMPEG
-Group:		X11/Development/Libraries
+Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -108,12 +108,30 @@ Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG.
 %description static -l uk
 Цей пакет м╕стить статичн╕ б╕бл╕отеки для розробки програм, що
 використовують SMPEG.
+
+%package gtv
+Summary:	gtv MPEG player
+Summary(pl):	Odtwarzacz MPEG gtv
+Group:		X11/Applications/Multimedia
+Requires:	%{name} = %{version}
+
+%description gtv
+gtv MPEG player.
+
+%description gtv -l pl
+Odtwarzacz MPEG gtv.
+
 %prep
 %setup -q
 %patch -p1
 
 %build
 rm -f missing
+# remove libtool.m4 from acinclude.m4
+head -168 acinclude.m4 > acinc.tmp
+tail -23 acinclude.m4 >> acinc.tmp
+mv -f acinc.tmp acinclude.m4
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -129,14 +147,14 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_datadir}/pixmaps}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -147,12 +165,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-%attr(755,root,root) %{_bindir}/gtv
 %attr(755,root,root) %{_bindir}/plaympeg
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_applnkdir}/Multimedia/*
-%{_pixmapsdir}/*
-%{_mandir}/man1/*
+%{_mandir}/man1/plaympeg.1*
 
 %files devel
 %defattr(644,root,root,755)
@@ -165,3 +180,10 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+
+%files gtv
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gtv
+%{_applnkdir}/Multimedia/*
+%{_pixmapsdir}/*
+%{_mandir}/man1/gtv.1*
