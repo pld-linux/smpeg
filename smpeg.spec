@@ -16,6 +16,7 @@ Patch0:		%{name}-acfix.patch
 Patch1:		%{name}-gcc.patch
 Patch2:		%{name}-optimize.patch
 Patch3:		%{name}-am18.patch
+Patch4:		%{name}-gcc4.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -144,6 +145,7 @@ Odtwarzacz MPEG gtv.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 # get only AC_TYPE_SOCKLEN_T, kill the rest (libtool.m4 in particular)
 tail -n 23 acinclude.m4 > acinc.tmp
