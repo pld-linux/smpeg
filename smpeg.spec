@@ -214,6 +214,6 @@ rm -rf $RPM_BUILD_ROOT
 %files gtv
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gtv
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_mandir}/man1/gtv.1*
