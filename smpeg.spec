@@ -8,7 +8,8 @@ Version:	0.4.4
 Release:	15
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.lokigames.com/pub/open-source/smpeg/%{name}-%{version}.tar.gz
+# currently developed at http://icculus.org/smpeg/ but no release yet
+Source0:	ftp://sunsite.dk/pub/os/linux/loki/open-source/smpeg/%{name}-%{version}.tar.gz
 # Source0-md5:	59c76ac704088ef5539210190c4e1fe3
 Source1:	gtv.desktop
 Source2:	gtv.png
@@ -27,8 +28,8 @@ BuildRequires:	gtk+-devel >= 1.2.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 Requires:	%{name}-libs = %{version}-%{release}
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsmpeg0.4
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 SMPEG is based on UC Berkeley's mpeg_play software MPEG decoder and
