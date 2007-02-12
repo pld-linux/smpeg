@@ -1,8 +1,8 @@
 Summary:	SDL MPEG Library
-Summary(pl):	Biblioteka SDL MPEG
-Summary(pt_BR):	Biblioteca MPEG SDL
-Summary(ru):	SDL MPEG библиотека и проигрыватель
-Summary(uk):	SDL MPEG б╕бл╕отека та програвач
+Summary(pl.UTF-8):   Biblioteka SDL MPEG
+Summary(pt_BR.UTF-8):   Biblioteca MPEG SDL
+Summary(ru.UTF-8):   SDL MPEG п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╦ п©я─п╬п╦пЁя─я▀п╡п╟я┌п╣п╩я▄
+Summary(uk.UTF-8):   SDL MPEG п╠я√п╠п╩я√п╬я┌п╣п╨п╟ я┌п╟ п©я─п╬пЁя─п╟п╡п╟я┤
 Name:		smpeg
 Version:	0.4.4
 Release:	16
@@ -37,49 +37,49 @@ SPLAY, an mpeg audio decoder created by Woo-jae Jung. We have
 completed the initial work to wed these two projects in order to
 create a general purpose MPEG video/audio player for the Linux OS.
 
-%description -l pl
+%description -l pl.UTF-8
 SMPEG jest bazowanym na mpeg_play z UC Berkeley programowym dekoderem
 MPEG. SMPLAY jest dekoderem audio stworzonym przez Woo-jae Jung.
-Skompletowali╤my prace tych dwСch projektСw, aby stworzyФ MPEG
-video/audio player ogСlnego przeznaczenia dla systemu Linux.
+Skompletowaliе⌡my prace tych dwцЁch projektцЁw, aby stworzyд┤ MPEG
+video/audio player ogцЁlnego przeznaczenia dla systemu Linux.
 
-%description -l pt_BR
-A SMPEG И baseada no software de decodificaГЦo MPEG mpeg_play da
-Universidade de Berkeley e no SPLAY, um decodificador de Аudio mpeg
+%description -l pt_BR.UTF-8
+A SMPEG ц╘ baseada no software de decodificaц╖цёo MPEG mpeg_play da
+Universidade de Berkeley e no SPLAY, um decodificador de ц║udio mpeg
 criado por Woo-jae Jung. Completamos o trabalho inicial de casar estes
-dois projetos para criar um reprodutor MPEG de vМdeo e Аudio de
-propСsito geral para o sistema operacional Linux.
+dois projetos para criar um reprodutor MPEG de vц╜deo e ц║udio de
+propцЁsito geral para o sistema operacional Linux.
 
-%description -l ru
-SMPEG основывается на программном MPEG декодере mpeg_play,
-разработанном в UCB (Университете Беркли) и SPLAY, аудио-декодере,
-созданном Woo-jae Jung. Эти два проекта были объединены для создания
-MPEG-аудио/видео проигрывателя для Linux.
+%description -l ru.UTF-8
+SMPEG п╬я│п╫п╬п╡я▀п╡п╟п╣я┌я│я▐ п╫п╟ п©я─п╬пЁя─п╟п╪п╪п╫п╬п╪ MPEG п╢п╣п╨п╬п╢п╣я─п╣ mpeg_play,
+я─п╟п╥я─п╟п╠п╬я┌п╟п╫п╫п╬п╪ п╡ UCB (пёп╫п╦п╡п╣я─я│п╦я┌п╣я┌п╣ п▒п╣я─п╨п╩п╦) п╦ SPLAY, п╟я┐п╢п╦п╬-п╢п╣п╨п╬п╢п╣я─п╣,
+я│п╬п╥п╢п╟п╫п╫п╬п╪ Woo-jae Jung. п╜я┌п╦ п╢п╡п╟ п©я─п╬п╣п╨я┌п╟ п╠я▀п╩п╦ п╬п╠я┼п╣п╢п╦п╫п╣п╫я▀ п╢п╩я▐ я│п╬п╥п╢п╟п╫п╦я▐
+MPEG-п╟я┐п╢п╦п╬/п╡п╦п╢п╣п╬ п©я─п╬п╦пЁя─я▀п╡п╟я┌п╣п╩я▐ п╢п╩я▐ Linux.
 
-%description -l uk
-SMPEG базу╓ться на програмному MPEG декодер╕ mpeg_play, розробленому в
-UCB (Ун╕верситет╕ Беркл╕) та SPLAY, ауд╕о-декодер╕, який створив
-Woo-jae Jung. Ц╕ два проекти були об'╓днан╕ для створення
-MPEG-ауд╕о/в╕део програвача для Linux.
+%description -l uk.UTF-8
+SMPEG п╠п╟п╥я┐я■я┌я▄я│я▐ п╫п╟ п©я─п╬пЁя─п╟п╪п╫п╬п╪я┐ MPEG п╢п╣п╨п╬п╢п╣я─я√ mpeg_play, я─п╬п╥я─п╬п╠п╩п╣п╫п╬п╪я┐ п╡
+UCB (пёп╫я√п╡п╣я─я│п╦я┌п╣я┌я√ п▒п╣я─п╨п╩я√) я┌п╟ SPLAY, п╟я┐п╢я√п╬-п╢п╣п╨п╬п╢п╣я─я√, я▐п╨п╦п╧ я│я┌п╡п╬я─п╦п╡
+Woo-jae Jung. п╕я√ п╢п╡п╟ п©я─п╬п╣п╨я┌п╦ п╠я┐п╩п╦ п╬п╠'я■п╢п╫п╟п╫я√ п╢п╩я▐ я│я┌п╡п╬я─п╣п╫п╫я▐
+MPEG-п╟я┐п╢я√п╬/п╡я√п╢п╣п╬ п©я─п╬пЁя─п╟п╡п╟я┤п╟ п╢п╩я▐ Linux.
 
 %package libs
 Summary:	Shared smpeg libraries
-Summary(pl):	WspСЁdzielone biblioteki smpeg
+Summary(pl.UTF-8):   WspцЁе┌dzielone biblioteki smpeg
 Group:		Libraries
 Conflicts:	smpeg < 0.4.4-14
 
 %description libs
 Shared smpeg libraries.
 
-%description libs -l pl
-WspСЁdzielone biblioteki smpeg.
+%description libs -l pl.UTF-8
+WspцЁе┌dzielone biblioteki smpeg.
 
 %package devel
 Summary:	Smpeg header files and development documentation
-Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja do smpeg
-Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes SMPEG
-Summary(ru):	Файлы, необходимые для разработки программ, использующих SMPEG
-Summary(uk):	Файли, необх╕дн╕ для розробки програм, що використовують SMPEG
+Summary(pl.UTF-8):   Pliki nagе┌цЁwkowe oraz dokumentacja do smpeg
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusцёo para desenvolvimento de aplicaц╖ц╣es SMPEG
+Summary(ru.UTF-8):   п╓п╟п╧п╩я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪, п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ SMPEG
+Summary(uk.UTF-8):   п╓п╟п╧п╩п╦, п╫п╣п╬п╠я┘я√п╢п╫я√ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ SMPEG
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	SDL-devel
@@ -88,58 +88,58 @@ Obsoletes:	libsmpeg0.4-devel
 %description devel
 Header files and development documentation for smpeg.
 
-%description devel -l pl
-Pliki nagЁСwkowe oraz dokumentacja do biblioteki smpeg.
+%description devel -l pl.UTF-8
+Pliki nagе┌цЁwkowe oraz dokumentacja do biblioteki smpeg.
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclusцёo para desenvolvimento de aplicaц╖ц╣es
 SMPEG.
 
-%description devel -l uk
-Цей пакет м╕стить файли, необх╕дн╕ для розробки програм, що
-використовують SMPEG.
+%description devel -l uk.UTF-8
+п╕п╣п╧ п©п╟п╨п╣я┌ п╪я√я│я┌п╦я┌я▄ я└п╟п╧п╩п╦, п╫п╣п╬п╠я┘я√п╢п╫я√ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ SMPEG.
 
-%description devel -l ru
-Этот пакет содержит файлы, необходимые для разработки программ,
-использующих SMPEG.
+%description devel -l ru.UTF-8
+п╜я┌п╬я┌ п©п╟п╨п╣я┌ я│п╬п╢п╣я─п╤п╦я┌ я└п╟п╧п╩я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪,
+п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ SMPEG.
 
 %package static
 Summary:	Smpeg static libraries
-Summary(pl):	Biblioteki statyczne smpeg
-Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG
-Summary(ru):	Статические библиотеки для разработки с использованием SMPEG
-Summary(uk):	Статичн╕ б╕бл╕отеки для розробки з використанням SMPEG
+Summary(pl.UTF-8):   Biblioteki statyczne smpeg
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para desenvolvimento de aplicaц╖ц╣es SMPEG
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ SMPEG
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ SMPEG
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Smpeg static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne smpeg.
 
-%description static -l pt_BR
-Bibliotecas estАticas para desenvolvimento de aplicaГУes SMPEG.
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para desenvolvimento de aplicaц╖ц╣es SMPEG.
 
 
-%description static -l ru
-Этот пакет содержит статические библиотеки для разработки программ,
-использующих SMPEG.
+%description static -l ru.UTF-8
+п╜я┌п╬я┌ п©п╟п╨п╣я┌ я│п╬п╢п╣я─п╤п╦я┌ я│я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪,
+п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ SMPEG.
 
-%description static -l uk
-Цей пакет м╕стить статичн╕ б╕бл╕отеки для розробки програм, що
-використовують SMPEG.
+%description static -l uk.UTF-8
+п╕п╣п╧ п©п╟п╨п╣я┌ п╪я√я│я┌п╦я┌я▄ я│я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ SMPEG.
 
 %package gtv
 Summary:	gtv MPEG player
-Summary(pl):	Odtwarzacz MPEG gtv
+Summary(pl.UTF-8):   Odtwarzacz MPEG gtv
 Group:		X11/Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
 %description gtv
 gtv MPEG player.
 
-%description gtv -l pl
+%description gtv -l pl.UTF-8
 Odtwarzacz MPEG gtv.
 
 %prep
