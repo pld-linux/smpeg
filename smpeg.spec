@@ -1,8 +1,8 @@
 Summary:	SDL MPEG Library
-Summary(pl.UTF-8):   Biblioteka SDL MPEG
-Summary(pt_BR.UTF-8):   Biblioteca MPEG SDL
-Summary(ru.UTF-8):   SDL MPEG библиотека и проигрыватель
-Summary(uk.UTF-8):   SDL MPEG бібліотека та програвач
+Summary(pl.UTF-8):	Biblioteka SDL MPEG
+Summary(pt_BR.UTF-8):	Biblioteca MPEG SDL
+Summary(ru.UTF-8):	SDL MPEG библиотека и проигрыватель
+Summary(uk.UTF-8):	SDL MPEG бібліотека та програвач
 Name:		smpeg
 Version:	0.4.4
 Release:	16
@@ -64,7 +64,7 @@ MPEG-аудіо/відео програвача для Linux.
 
 %package libs
 Summary:	Shared smpeg libraries
-Summary(pl.UTF-8):   Współdzielone biblioteki smpeg
+Summary(pl.UTF-8):	Współdzielone biblioteki smpeg
 Group:		Libraries
 Conflicts:	smpeg < 0.4.4-14
 
@@ -76,10 +76,10 @@ Współdzielone biblioteki smpeg.
 
 %package devel
 Summary:	Smpeg header files and development documentation
-Summary(pl.UTF-8):   Pliki nagłówkowe oraz dokumentacja do smpeg
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SMPEG
-Summary(ru.UTF-8):   Файлы, необходимые для разработки программ, использующих SMPEG
-Summary(uk.UTF-8):   Файли, необхідні для розробки програм, що використовують SMPEG
+Summary(pl.UTF-8):	Pliki nagłówkowe oraz dokumentacja do smpeg
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SMPEG
+Summary(ru.UTF-8):	Файлы, необходимые для разработки программ, использующих SMPEG
+Summary(uk.UTF-8):	Файли, необхідні для розробки програм, що використовують SMPEG
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	SDL-devel
@@ -105,10 +105,10 @@ SMPEG.
 
 %package static
 Summary:	Smpeg static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne smpeg
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento de aplicações SMPEG
-Summary(ru.UTF-8):   Статические библиотеки для разработки с использованием SMPEG
-Summary(uk.UTF-8):   Статичні бібліотеки для розробки з використанням SMPEG
+Summary(pl.UTF-8):	Biblioteki statyczne smpeg
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento de aplicações SMPEG
+Summary(ru.UTF-8):	Статические библиотеки для разработки с использованием SMPEG
+Summary(uk.UTF-8):	Статичні бібліотеки для розробки з використанням SMPEG
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -132,7 +132,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 
 %package gtv
 Summary:	gtv MPEG player
-Summary(pl.UTF-8):   Odtwarzacz MPEG gtv
+Summary(pl.UTF-8):	Odtwarzacz MPEG gtv
 Group:		X11/Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
