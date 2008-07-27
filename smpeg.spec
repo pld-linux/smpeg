@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	SDL MPEG библиотека и проигрыватель
 Summary(uk.UTF-8):	SDL MPEG бібліотека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	16
+Release:	17
 License:	LGPL
 Group:		Libraries
 # currently developed at http://icculus.org/smpeg/ but no release yet
