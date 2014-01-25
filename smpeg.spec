@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	SDL MPEG библиотека и проигрыватель
 Summary(uk.UTF-8):	SDL MPEG бібліотека та програвач
 Name:		smpeg
 Version:	0.4.4
-Release:	17
+Release:	18
 License:	LGPL
 Group:		Libraries
 # currently developed at http://icculus.org/smpeg/ but no release yet
@@ -20,6 +20,7 @@ Patch3:		%{name}-am18.patch
 Patch4:		%{name}-gcc4.patch
 Patch5:		%{name}-gnu-stack.patch
 Patch6:		%{name}-fPIC.patch
+Patch7:		format-security.patch
 URL:		http://www.lokigames.com/development/smpeg.php3
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -151,6 +152,7 @@ Odtwarzacz MPEG gtv.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p0
+%patch7 -p1
 
 # get only AC_TYPE_SOCKLEN_T, kill the rest (libtool.m4 in particular)
 tail -n 23 acinclude.m4 > acinc.tmp
@@ -198,12 +200,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libsmpeg-0.4.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsmpeg-0.4.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/smpeg-config
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libsmpeg.so
 %{_libdir}/lib*.la
 %{_includedir}/*
 %{_aclocaldir}/*
