@@ -1,0 +1,11 @@
+--- smpeg-0.4.4/plaympeg.c.orig	2014-01-25 10:35:32.473152576 +0100
++++ smpeg-0.4.4/plaympeg.c	2014-01-25 10:36:21.496226535 +0100
+@@ -262,7 +262,7 @@ int ftp_get_reply(int tcp_sock)
+       answer[i] = c;
+     }
+     answer[i] = 0;
+-    fprintf(stderr, answer + 4);
++    fputs(answer + 4, stderr);
+   }
+   while(answer[3] == '-');
+ 
