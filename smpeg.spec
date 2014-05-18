@@ -4,30 +4,26 @@ Summary(pt_BR.UTF-8):	Biblioteca MPEG SDL
 Summary(ru.UTF-8):	SDL MPEG библиотека и проигрыватель
 Summary(uk.UTF-8):	SDL MPEG бібліотека та програвач
 Name:		smpeg
-Version:	0.4.4
-Release:	18
-License:	LGPL
+Version:	0.4.5
+Release:	1
+License:	LGPL v2+
 Group:		Libraries
-# currently developed at http://icculus.org/smpeg/ but no release yet
-Source0:	ftp://sunsite.dk/pub/os/linux/loki/open-source/smpeg/%{name}-%{version}.tar.gz
-# Source0-md5:	59c76ac704088ef5539210190c4e1fe3
+Source0:	http://www.libsdl.org/projects/SDL_mixer/libs/old/%{name}-%{version}.zip
+# Source0-md5:	ab48e149eed296072efd8865e53ec374
 Source1:	gtv.desktop
 Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
-Patch1:		%{name}-gcc.patch
-Patch2:		%{name}-optimize.patch
-Patch3:		%{name}-am18.patch
-Patch4:		%{name}-gcc4.patch
-Patch5:		%{name}-gnu-stack.patch
-Patch6:		%{name}-fPIC.patch
-Patch7:		format-security.patch
-URL:		http://www.lokigames.com/development/smpeg.php3
+Patch1:		%{name}-optimize.patch
+Patch2:		format-security.patch
+URL:		http://icculus.org/smpeg/
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+-devel >= 1.2.1
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	libtool >= 2:1.5
+BuildRequires:	pkgconfig
 Requires:	%{name}-libs = %{version}-%{release}
 Obsoletes:	libsmpeg0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,8 +72,8 @@ Shared smpeg libraries.
 Współdzielone biblioteki smpeg.
 
 %package devel
-Summary:	Smpeg header files and development documentation
-Summary(pl.UTF-8):	Pliki nagłówkowe oraz dokumentacja do smpeg
+Summary:	Smpeg header files
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki smpeg
 Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SMPEG
 Summary(ru.UTF-8):	Файлы, необходимые для разработки программ, использующих SMPEG
 Summary(uk.UTF-8):	Файли, необхідні для розробки програм, що використовують SMPEG
@@ -87,10 +83,10 @@ Requires:	SDL-devel
 Obsoletes:	libsmpeg0.4-devel
 
 %description devel
-Header files and development documentation for smpeg.
+Header files for smpeg library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe oraz dokumentacja do biblioteki smpeg.
+Pliki nagłówkowe biblioteki smpeg.
 
 %description devel -l pt_BR.UTF-8
 Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
@@ -105,8 +101,8 @@ SMPEG.
 использующих SMPEG.
 
 %package static
-Summary:	Smpeg static libraries
-Summary(pl.UTF-8):	Biblioteki statyczne smpeg
+Summary:	Smpeg static library
+Summary(pl.UTF-8):	Biblioteka statyczna smpeg
 Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento de aplicações SMPEG
 Summary(ru.UTF-8):	Статические библиотеки для разработки с использованием SMPEG
 Summary(uk.UTF-8):	Статичні бібліотеки для розробки з використанням SMPEG
@@ -114,14 +110,13 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Smpeg static libraries.
+Smpeg static library.
 
 %description static -l pl.UTF-8
-Biblioteki statyczne smpeg.
+Biblioteka statyczna smpeg.
 
 %description static -l pt_BR.UTF-8
 Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
-
 
 %description static -l ru.UTF-8
 Этот пакет содержит статические библиотеки для разработки программ,
@@ -131,49 +126,51 @@ Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 Цей пакет містить статичні бібліотеки для розробки програм, що
 використовують SMPEG.
 
+%package glmovie
+Summary:	glmovie - OpenGL based MPEG player
+Summary(pl.UTF-8):	glmovie - odtwarzacz MPEG oparty na OpenGL-u.
+Group:		X11/Applications/Multimedia
+Requires:	%{name} = %{version}-%{release}
+
+%description glmovie
+glmovie - OpenGL based MPEG player.
+
+%description glmovie -l pl.UTF-8
+glmovie - odtwarzacz MPEG oparty na OpenGL-u.
+
 %package gtv
-Summary:	gtv MPEG player
-Summary(pl.UTF-8):	Odtwarzacz MPEG gtv
+Summary:	gtv - GTK+ based MPEG player
+Summary(pl.UTF-8):	gtv - odtwarzacz MPEG oparty na GTK+
 Group:		X11/Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
 %description gtv
-gtv MPEG player.
+gtv - GTK+ based MPEG player.
 
 %description gtv -l pl.UTF-8
-Odtwarzacz MPEG gtv.
+gtv - odtwarzacz MPEG oparty na GTK+.
 
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p0
-%patch7 -p1
 
-# get only AC_TYPE_SOCKLEN_T, kill the rest (libtool.m4 in particular)
-tail -n 23 acinclude.m4 > acinc.tmp
-mv -f acinc.tmp acinclude.m4
+%{__rm} acinclude/{libtool,lt*}.m4
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I acinclude
 %{__autoconf}
 %{__automake}
-CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
+CXXFLAGS="%{rpmcxxflags} -fno-rtti -fno-exceptions"
 %configure \
 %ifarch %{ix86}
 	--enable-mmx \
 %endif
-	--disable-debug \
-	--disable-opengl-player
+	--disable-debug
 
-%{__make} \
-	CC="%{__cxx}" \
-	CCASFLAGS="\$(CFLAGS)"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -194,30 +191,34 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README
+%doc CHANGES README README.SDL_mixer TODO
 %attr(755,root,root) %{_bindir}/plaympeg
 %{_mandir}/man1/plaympeg.1*
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libsmpeg-0.4.so.*.*
+%attr(755,root,root) %{_libdir}/libsmpeg-0.4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libsmpeg-0.4.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/smpeg-config
 %attr(755,root,root) %{_libdir}/libsmpeg.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_aclocaldir}/*
+%{_libdir}/libsmpeg.la
+%{_includedir}/smpeg
+%{_aclocaldir}/smpeg.m4
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libsmpeg.a
+
+%files glmovie
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/glmovie
 
 %files gtv
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gtv
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%{_desktopdir}/gtv.desktop
+%{_pixmapsdir}/gtv.png
 %{_mandir}/man1/gtv.1*
