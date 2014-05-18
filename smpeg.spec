@@ -35,10 +35,10 @@ completed the initial work to wed these two projects in order to
 create a general purpose MPEG video/audio player for the Linux OS.
 
 %description -l pl.UTF-8
-SMPEG jest bazowanym na mpeg_play z UC Berkeley programowym dekoderem
+SMPEG jest opartym na mpeg_play z UC Berkeley programowym dekoderem
 MPEG. SMPLAY jest dekoderem audio stworzonym przez Woo-jae Jung.
-Skompletowaliśmy prace tych dwóch projektów, aby stworzyć MPEG
-video/audio player ogólnego przeznaczenia dla systemu Linux.
+Skompletowano prace tych dwóch projektów, aby stworzyć odtwarzacz MPEG
+video/audio ogólnego przeznaczenia dla systemu Linux.
 
 %description -l pt_BR.UTF-8
 A SMPEG é baseada no software de decodificação MPEG mpeg_play da
@@ -60,16 +60,16 @@ Woo-jae Jung. Ці два проекти були об'єднані для ст�
 MPEG-аудіо/відео програвача для Linux.
 
 %package libs
-Summary:	Shared smpeg libraries
-Summary(pl.UTF-8):	Współdzielone biblioteki smpeg
+Summary:	Shared smpeg library
+Summary(pl.UTF-8):	Współdzielona biblioteka smpeg
 Group:		Libraries
 Conflicts:	smpeg < 0.4.4-14
 
 %description libs
-Shared smpeg libraries.
+Shared smpeg library.
 
 %description libs -l pl.UTF-8
-Współdzielone biblioteki smpeg.
+Współdzielona biblioteka smpeg.
 
 %package devel
 Summary:	Smpeg header files
@@ -128,7 +128,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SMPEG.
 
 %package glmovie
 Summary:	glmovie - OpenGL based MPEG player
-Summary(pl.UTF-8):	glmovie - odtwarzacz MPEG oparty na OpenGL-u.
+Summary(pl.UTF-8):	glmovie - odtwarzacz MPEG oparty na OpenGL-u
 Group:		X11/Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
