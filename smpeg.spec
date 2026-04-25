@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	SDL MPEG библиотека и проигрыватель
 Summary(uk.UTF-8):	SDL MPEG бібліотека та програвач
 Name:		smpeg
 Version:	0.4.5
-Release:	4
+Release:	5
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/libs/old/%{name}-%{version}.zip
@@ -15,6 +15,7 @@ Source2:	gtv.png
 Patch0:		%{name}-acfix.patch
 Patch1:		%{name}-optimize.patch
 Patch2:		format-security.patch
+Patch3:		narrowing.patch
 URL:		http://icculus.org/smpeg/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel >= 1.2.0
@@ -155,6 +156,7 @@ gtv - odtwarzacz MPEG oparty na GTK+.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
 
 %{__rm} acinclude/{libtool,lt*}.m4
 
